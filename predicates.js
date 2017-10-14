@@ -57,4 +57,4 @@ predicates.timespan = val => {
 // };
 
 
-exports = predicates;
+exports.predicates = predicates;

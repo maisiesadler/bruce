@@ -26,6 +26,12 @@ var dataStore = function (filepath, onload) {
         return clone;
     };
 
+    this.getAt = function (idx) {
+        var item = cache[idx];
+        var clone = JSON.parse(JSON.stringify(item));
+        return clone;
+    };
+
     var save = function () {
         var m = JSON.stringify(cache, null, 2);
         fs.writeFile(filepath, m, function (err) {

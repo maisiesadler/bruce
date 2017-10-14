@@ -1,7 +1,7 @@
 var indexedDs = require('./indexeddatastore').ds;
 var file = "/Users/maisiesadler/nodeapps/workouts/workouts.json";
 
-var ds = new indexedDs(file, ['who', 'what', 'when'], item => {
+var workoutDataStore = new indexedDs(file, ['who', 'what', 'when'], item => {
     return {
         howmuch: item.howmuch,
         howmany: item.howmany
@@ -17,25 +17,30 @@ var addWorkout = function (when, who, what, howmuch, howmany) {
         howmany: howmany
     };
 
-    ds.add(wo);
+    workoutDataStore.add(wo);
 };
 
 var getWorkoutsSince = function (who, what, when) {
-    //var matches = ds.get(e => e.who === who && e.what === what && e.when > when);
-    var matches = ds.get({
+    var search = {
         who: who,
         what: what
-    });
+    };
+    if (what === "all")
+        delete search["what"];
+    var matches = workoutDataStore.get(search, "when");
 
+    if (matches == null)
+        return [];
     var inRange = [];
     Object.getOwnPropertyNames(matches).forEach(date => {
-        if(date > when){
-           var o = matches[date];
-           o.when = date;
-           inRange.push(o);
+        if (date > when) {
+            var location = matches[date].location;
+            var o = workoutDataStore.getAt(location);
+            inRange.push(o);
         }
     });
-    
+    inRange = inRange.sort(function(a, b){return a.when-b.when});
+
     return inRange;
 };
 

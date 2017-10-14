@@ -7,32 +7,32 @@ var getOrAdd = function (obj, key) {
     return obj[key];
 };
 
-var idxStructure = function (keys, getValueFn) {
-    this.idx = function (obj, item) {
+var idxStructure = function (keys) {
+    this.idx = function (obj, location, item) {
         var o = obj;
         keys.forEach(key => {
             var k = item[key];
+            o.__level = key;
             o = getOrAdd(o, k);
         });
 
-        //var mk = item[mainKey];
-        var v = getValueFn(item);
-        Object.getOwnPropertyNames(v).forEach(p => {
-            o[p] = v[p];
-        });
+        o["location"] = location;
     };
 
     this.keys = JSON.parse(JSON.stringify(keys));
 };
 
-var indexedDs = function (file, keys, getValueFn) {
+var fileLocation = 0;
+
+var indexedDs = function (file, keys) {
     var idx = {};
 
-    var structure = new idxStructure(keys, getValueFn);
+    var structure = new idxStructure(keys);
     var indexData = function () {
         var data = ds.get();
-        data.forEach(function (item) {
-            structure.idx(idx, item);
+        data.forEach(function (item, i) {
+            structure.idx(idx, fileLocation, item);
+            fileLocation++;
         }, this);
 
         return idx;
@@ -40,11 +40,12 @@ var indexedDs = function (file, keys, getValueFn) {
     var ds = new datastore(file, indexData);
 
     this.add = function (item) {
-        structure.idx(idx, item);
+        structure.idx(idx, fileLocation, item);
+        fileLocation++;
         ds.add(item);
     };
 
-    this.get = function (keyObj) {
+    this.get = function (keyObj, level) {
         var clone = JSON.parse(JSON.stringify(idx));
         structure.keys.forEach(function (key) {
             if (keyObj.hasOwnProperty(key)) {
@@ -58,7 +59,26 @@ var indexedDs = function (file, keys, getValueFn) {
             }
         }, this);
 
+        while (clone != null && clone.length === undefined &&
+            level && clone.__level !== level && clone.__level !== "location") {
+            var o = {};
+            Object.getOwnPropertyNames(clone).forEach(p => {
+                if (p === "__level")
+                    return;
+                var wo = clone[p];
+                Object.getOwnPropertyNames(wo).forEach(w => {
+                    o[w] = wo[w];
+                })
+            });
+
+            clone = o;
+        }
+
         return clone;
+    };
+
+    this.getAt = function (index) {
+        return ds.getAt(index);
     };
 };
 
