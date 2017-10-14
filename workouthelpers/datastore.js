@@ -6,7 +6,7 @@ var dataStore = function (filepath, onload) {
     fs.readFile(filepath, 'utf8', function (err, data) {
         if (!err) {
             cache = JSON.parse(data);
-            if(onload)
+            if (onload)
                 onload();
         } else {
             console.log(err);

@@ -18,3 +18,6 @@ var includelog = require('./logbot').add;
 var bot = connectbot();
 includemaxes(bot, maxhistory.addMax, maxhistory.getMax);
 includelog(bot, logworkout.add, logworkout.get);
+
+
+

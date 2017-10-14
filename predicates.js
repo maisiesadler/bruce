@@ -1,3 +1,6 @@
+var getRecognisedExercise = require('./recognisedexercises').getRecognisedExercise;
+var getRecognisedUser = require('./recogniseduser').getRecognisedUser;
+
 var predicates = {};
 predicates.integer = val => {
     return parseFloat(val) === parseInt(val);
@@ -23,6 +26,21 @@ predicates.timespan = val => {
     return parseFloat(val) > 0;
 };
 
+predicates.isRecognisedUser = val => {
+    if (val === "me")
+        return true;
+
+    return getRecognisedUser(val) !== "";
+};
+
+predicates.isRecognisedExercise = val => getRecognisedExercise(val) !== "";
+predicates.isRecognisedExerciseOrAll = val => {
+    if (val === "all") {
+        return true;
+    }
+    val = getRecognisedExercise(val);
+    return val !== "";
+};
 // Bot.predicates.negativeInteger = val => {
 //     return parseFloat(val) === parseInt(val) && parseInt(val) < 0;
 // };

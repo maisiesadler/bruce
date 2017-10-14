@@ -1,5 +1,5 @@
 var datastore = require('./datastore').ds;
-var maxesFile = "/Users/maisiesadler/nodeapps/workouts/maxes.json";
+var maxesFile = "/Users/maisiesadler/nodeapps/workouts/data/maxes.json";
 
 var ds = new datastore(maxesFile);
 
