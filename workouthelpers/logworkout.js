@@ -1,5 +1,6 @@
 var indexedDs = require('./indexeddatastore').ds;
 var file = "/Users/maisiesadler/nodeapps/workouts/workouts.json";
+var addOrm = require('./../impliedorm').addOrm;
 
 var workoutDataStore = new indexedDs(file, ['who', 'what', 'when'], item => {
     return {
@@ -16,6 +17,8 @@ var addWorkout = function (when, who, what, howmuch, howmany) {
         howmuch: howmuch,
         howmany: howmany
     };
+
+    addOrm(wo);
 
     workoutDataStore.add(wo);
 };

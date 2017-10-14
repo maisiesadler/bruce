@@ -16,14 +16,14 @@ var woBot = function (bot, setMax, getMax) {
         .ask("what weight?", { predicate: predicates.positiveNumber, then: (msg, resp) => (msg.weight = resp) })
         .reply(m => m.weight + "kg for " + m.exercise + " isn't bad")
         .do(m => {
-            setMax('maisie', m.exercise, m.weight);
+            setMax(m.user.name, m.exercise, m.weight);
         })
         .reply('done')
         .start();
 
     getExerciseForAction("get")
         .do(m => {
-            m.max = getMax("maisie", m.exercise)
+            m.max = getMax(m.user.name, m.exercise)
         })
         .reply(m => {
             if (m.max == null)

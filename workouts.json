@@ -418,5 +418,485 @@
     "what": "deadlift",
     "howmuch": "81",
     "howmany": "6"
+  },
+  {
+    "when": 1499605200000,
+    "who": "@stinky",
+    "what": "bench",
+    "howmuch": "85",
+    "howmany": "7",
+    "impliedOrm": "103.3"
+  },
+  {
+    "when": 1500210000000,
+    "who": "@stinky",
+    "what": "bench",
+    "howmuch": "90",
+    "howmany": "6",
+    "impliedOrm": "107.7"
+  },
+  {
+    "when": 1501088400000,
+    "who": "@stinky",
+    "what": "bench",
+    "howmuch": "95",
+    "howmany": "3",
+    "impliedOrm": "106.0"
+  },
+  {
+    "when": 1502035200000,
+    "who": "@stinky",
+    "what": "bench",
+    "howmuch": "90",
+    "howmany": "5",
+    "impliedOrm": "105.7"
+  },
+  {
+    "when": 1502622000000,
+    "who": "@stinky",
+    "what": "bench",
+    "howmuch": "90",
+    "howmany": "8",
+    "impliedOrm": "110.8"
+  },
+  {
+    "when": 1503241200000,
+    "who": "@stinky",
+    "what": "bench",
+    "howmuch": "97.5",
+    "howmany": "2",
+    "impliedOrm": "104.5"
+  },
+  {
+    "when": 1504450800000,
+    "who": "@stinky",
+    "what": "bench",
+    "howmuch": "85",
+    "howmany": "7",
+    "impliedOrm": "103.3"
+  },
+  {
+    "when": 1505052000000,
+    "who": "@stinky",
+    "what": "bench",
+    "howmuch": "90",
+    "howmany": "4",
+    "impliedOrm": "103.4"
+  },
+  {
+    "when": 1507136400000,
+    "who": "@stinky",
+    "what": "bench",
+    "howmuch": "81",
+    "howmany": "7",
+    "impliedOrm": "98.4"
+  },
+  {
+    "when": 1499796000000,
+    "who": "@stinky",
+    "what": "squat",
+    "howmuch": "85",
+    "howmany": "10",
+    "impliedOrm": "107.0"
+  },
+  {
+    "when": 1500138000000,
+    "who": "@stinky",
+    "what": "squat",
+    "howmuch": "90",
+    "howmany": "8",
+    "impliedOrm": "110.8"
+  },
+  {
+    "when": 1500742800000,
+    "who": "@stinky",
+    "what": "squat",
+    "howmuch": "95",
+    "howmany": "5",
+    "impliedOrm": "111.6"
+  },
+  {
+    "when": 1501927200000,
+    "who": "@stinky",
+    "what": "squat",
+    "howmuch": "90",
+    "howmany": "10",
+    "impliedOrm": "113.3"
+  },
+  {
+    "when": 1502553600000,
+    "who": "@stinky",
+    "what": "squat",
+    "howmuch": "95",
+    "howmany": "8",
+    "impliedOrm": "117.0"
+  },
+  {
+    "when": 1503133200000,
+    "who": "@stinky",
+    "what": "squat",
+    "howmuch": "100",
+    "howmany": "8",
+    "impliedOrm": "123.1"
+  },
+  {
+    "when": 1504630800000,
+    "who": "@stinky",
+    "what": "squat",
+    "howmuch": "95",
+    "howmany": "5",
+    "impliedOrm": "111.6"
+  },
+  {
+    "when": 1505239200000,
+    "who": "@stinky",
+    "what": "squat",
+    "howmuch": "100",
+    "howmany": "9",
+    "impliedOrm": "124.6"
+  },
+  {
+    "when": 1505642400000,
+    "who": "@stinky",
+    "what": "squat",
+    "howmuch": "105",
+    "howmany": "7",
+    "impliedOrm": "127.6"
+  },
+  {
+    "when": 1506855600000,
+    "who": "@stinky",
+    "what": "squat",
+    "howmuch": "85",
+    "howmany": "5",
+    "impliedOrm": "99.8"
+  },
+  {
+    "when": 1499968800000,
+    "who": "@stinky",
+    "what": "deadlift",
+    "howmuch": "127.5",
+    "howmany": "8",
+    "impliedOrm": "157.0"
+  },
+  {
+    "when": 1500541200000,
+    "who": "@stinky",
+    "what": "deadlift",
+    "howmuch": "130",
+    "howmany": "7",
+    "impliedOrm": "157.9"
+  },
+  {
+    "when": 1501318800000,
+    "who": "@stinky",
+    "what": "deadlift",
+    "howmuch": "137.5",
+    "howmany": "5",
+    "impliedOrm": "161.5"
+  },
+  {
+    "when": 1502521200000,
+    "who": "@stinky",
+    "what": "deadlift",
+    "howmuch": "125",
+    "howmany": "8",
+    "impliedOrm": "153.9"
+  },
+  {
+    "when": 1502895600000,
+    "who": "@stinky",
+    "what": "deadlift",
+    "howmuch": "132.5",
+    "howmany": "8",
+    "impliedOrm": "163.1"
+  },
+  {
+    "when": 1503334800000,
+    "who": "@stinky",
+    "what": "deadlift",
+    "howmuch": "137.5",
+    "howmany": "6",
+    "impliedOrm": "164.5"
+  },
+  {
+    "when": 1504803600000,
+    "who": "@stinky",
+    "what": "deadlift",
+    "howmuch": "127.5",
+    "howmany": "9",
+    "impliedOrm": "158.8"
+  },
+  {
+    "when": 1505412000000,
+    "who": "@stinky",
+    "what": "deadlift",
+    "howmuch": "135",
+    "howmany": "7",
+    "impliedOrm": "164.0"
+  },
+  {
+    "when": 1499605200000,
+    "who": "@maisie",
+    "what": "bench",
+    "howmuch": "33.5",
+    "howmany": "6",
+    "impliedOrm": "40.1"
+  },
+  {
+    "when": 1500210000000,
+    "who": "@maisie",
+    "what": "bench",
+    "howmuch": "36",
+    "howmany": "7",
+    "impliedOrm": "43.7"
+  },
+  {
+    "when": 1501088400000,
+    "who": "@maisie",
+    "what": "bench",
+    "howmuch": "38.5",
+    "howmany": "4",
+    "impliedOrm": "44.2"
+  },
+  {
+    "when": 1502035200000,
+    "who": "@maisie",
+    "what": "bench",
+    "howmuch": "36",
+    "howmany": "7",
+    "impliedOrm": "43.7"
+  },
+  {
+    "when": 1502622000000,
+    "who": "@maisie",
+    "what": "bench",
+    "howmuch": "38.5",
+    "howmany": "6",
+    "impliedOrm": "46.1"
+  },
+  {
+    "when": 1503241200000,
+    "who": "@maisie",
+    "what": "bench",
+    "howmuch": "40",
+    "howmany": "5",
+    "impliedOrm": "47.0"
+  },
+  {
+    "when": 1504450800000,
+    "who": "@maisie",
+    "what": "bench",
+    "howmuch": "38.5",
+    "howmany": "6",
+    "impliedOrm": "46.1"
+  },
+  {
+    "when": 1505052000000,
+    "who": "@maisie",
+    "what": "bench",
+    "howmuch": "40",
+    "howmany": "5",
+    "impliedOrm": "47.0"
+  },
+  {
+    "when": 1505926800000,
+    "who": "@maisie",
+    "what": "bench",
+    "howmuch": "42.5",
+    "howmany": "5",
+    "impliedOrm": "49.9"
+  },
+  {
+    "when": 1507136400000,
+    "who": "@maisie",
+    "what": "bench",
+    "howmuch": "40",
+    "howmany": "4",
+    "impliedOrm": "45.9"
+  },
+  {
+    "when": 1507741200000,
+    "who": "@maisie",
+    "what": "bench",
+    "howmuch": "42.5",
+    "howmany": "4",
+    "impliedOrm": "48.8"
+  },
+  {
+    "when": 1499796000000,
+    "who": "@maisie",
+    "what": "squat",
+    "howmuch": "63.25",
+    "howmany": "10",
+    "impliedOrm": "79.6"
+  },
+  {
+    "when": 1500138000000,
+    "who": "@maisie",
+    "what": "squat",
+    "howmuch": "71",
+    "howmany": "3",
+    "impliedOrm": "79.2"
+  },
+  {
+    "when": 1500742800000,
+    "who": "@maisie",
+    "what": "squat",
+    "howmuch": "71",
+    "howmany": "7",
+    "impliedOrm": "86.3"
+  },
+  {
+    "when": 1501927200000,
+    "who": "@maisie",
+    "what": "squat",
+    "howmuch": "67.5",
+    "howmany": "8",
+    "impliedOrm": "83.1"
+  },
+  {
+    "when": 1502553600000,
+    "who": "@maisie",
+    "what": "squat",
+    "howmuch": "72.5",
+    "howmany": "5",
+    "impliedOrm": "85.2"
+  },
+  {
+    "when": 1503133200000,
+    "who": "@maisie",
+    "what": "squat",
+    "howmuch": "76",
+    "howmany": "3",
+    "impliedOrm": "84.8"
+  },
+  {
+    "when": 1504630800000,
+    "who": "@maisie",
+    "what": "squat",
+    "howmuch": "70",
+    "howmany": "5",
+    "impliedOrm": "82.2"
+  },
+  {
+    "when": 1505239200000,
+    "who": "@maisie",
+    "what": "squat",
+    "howmuch": "75",
+    "howmany": "5",
+    "impliedOrm": "88.1"
+  },
+  {
+    "when": 1505642400000,
+    "who": "@maisie",
+    "what": "squat",
+    "howmuch": "78.5",
+    "howmany": "2",
+    "impliedOrm": "84.1"
+  },
+  {
+    "when": 1506855600000,
+    "who": "@maisie",
+    "what": "squat",
+    "howmuch": "70",
+    "howmany": "7",
+    "impliedOrm": "85.0"
+  },
+  {
+    "when": 1507471200000,
+    "who": "@maisie",
+    "what": "squat",
+    "howmuch": "75",
+    "howmany": "6",
+    "impliedOrm": "89.7"
+  },
+  {
+    "when": 1499968800000,
+    "who": "@maisie",
+    "what": "deadlift",
+    "howmuch": "72.5",
+    "howmany": "5",
+    "impliedOrm": "85.2"
+  },
+  {
+    "when": 1500541200000,
+    "who": "@maisie",
+    "what": "deadlift",
+    "howmuch": "76",
+    "howmany": "3",
+    "impliedOrm": "84.8"
+  },
+  {
+    "when": 1501318800000,
+    "who": "@maisie",
+    "what": "deadlift",
+    "howmuch": "81",
+    "howmany": "1",
+    "impliedOrm": "81.0"
+  },
+  {
+    "when": 1502521200000,
+    "who": "@maisie",
+    "what": "deadlift",
+    "howmuch": "72.25",
+    "howmany": "5",
+    "impliedOrm": "84.9"
+  },
+  {
+    "when": 1502895600000,
+    "who": "@maisie",
+    "what": "deadlift",
+    "howmuch": "76",
+    "howmany": "6",
+    "impliedOrm": "90.9"
+  },
+  {
+    "when": 1503334800000,
+    "who": "@maisie",
+    "what": "deadlift",
+    "howmuch": "81",
+    "howmany": "3",
+    "impliedOrm": "90.4"
+  },
+  {
+    "when": 1504803600000,
+    "who": "@maisie",
+    "what": "deadlift",
+    "howmuch": "75",
+    "howmany": "8",
+    "impliedOrm": "92.3"
+  },
+  {
+    "when": 1505412000000,
+    "who": "@maisie",
+    "what": "deadlift",
+    "howmuch": "78.5",
+    "howmany": "10",
+    "impliedOrm": "98.8"
+  },
+  {
+    "when": 1505840400000,
+    "who": "@maisie",
+    "what": "deadlift",
+    "howmuch": "82.5",
+    "howmany": "4",
+    "impliedOrm": "94.8"
+  },
+  {
+    "when": 1507050000000,
+    "who": "@maisie",
+    "what": "deadlift",
+    "howmuch": "76",
+    "howmany": "7",
+    "impliedOrm": "92.3"
+  },
+  {
+    "when": 1507654800000,
+    "who": "@maisie",
+    "what": "deadlift",
+    "howmuch": "81",
+    "howmany": "6",
+    "impliedOrm": "96.9"
   }
 ]

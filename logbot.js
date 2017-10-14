@@ -38,6 +38,7 @@ var woBot = function (bot, addWorkout, getWorkout) {
                 if (m.exercise === "all") {
                     formatted += " - " + element.what + ":";
                 }
+                formatted += " {" + element.impliedOrm + "} ";
                 formatted += " " + element.howmany + "@" + element.howmuch + "kg\n";
                 reply += formatted;
             }, this);

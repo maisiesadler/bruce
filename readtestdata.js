@@ -100,11 +100,6 @@ var loadTestData = function (callback) {
 };
 
 
-// loadTestData(data => {
-//     data.forEach(function(element) {
-//         var who = element.who === 'jones' ? '@stinky' : '@maisie';
-//         logworkout.add(element.when, who, element.what, element.weight, element.reps);
-//     }, this);
-// });
+
 
 exports.loadTestData = loadTestData;

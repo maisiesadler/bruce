@@ -40,5 +40,11 @@
     "exercise": "squat",
     "max": "5",
     "date": 1507451831285
+  },
+  {
+    "person": "@maisie",
+    "exercise": "squat",
+    "max": "6",
+    "date": 1507975628421
   }
 ]
