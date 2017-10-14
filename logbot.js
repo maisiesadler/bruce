@@ -1,40 +1,10 @@
 var predicates = require('./predicates').predicates;
 var dateformat = require('./dateformat');
+var getRecognisedExercise = require('./recognisedexercises').getRecognisedExercise;
 
 var hr = 3600000;
 var day = hr * 24;
 
-var exercises = {
-    squat: ['squats'],
-    bench: []
-};
-var knownExerciseMap = {};
-(function () {
-    Object.getOwnPropertyNames(exercises).forEach(exercise => {
-        if (knownExerciseMap.hasOwnProperty(exercise))
-            throw new Error('Already registered exercise ' + exercise + ' as ' + knownExerciseMap[exercise]);
-        knownExerciseMap[exercise] = exercise;
-
-        var synonymArr = exercises[exercise];
-        synonymArr.forEach(syn => {
-            if (syn === "")
-                return;
-
-            if (knownExerciseMap.hasOwnProperty(syn))
-                throw new Error('Already registered synonym ' + syn + ' for ' + knownExerciseMap[syn]);
-
-            knownExerciseMap[syn] = exercise;
-        })
-    });
-})();
-
-var getRecognisedExercise = function (input) {
-    if (knownExerciseMap.hasOwnProperty(input)) {
-        return knownExerciseMap[input];
-    }
-
-    return "";
-};
 
 var woBot = function (bot, addWorkout, getWorkout) {
 
@@ -64,11 +34,11 @@ var woBot = function (bot, addWorkout, getWorkout) {
         .reply(m => {
             var reply = "you have " + m.wos.length + " to show\n";
             m.wos.forEach(function (element) {
-                var formatted = dateformat.prettyPrintTimeSpan(element.when);
+                var formatted = '`' + dateformat.prettyPrintTimeSpan(element.when) + '`';
                 if (m.exercise === "all") {
-                    formatted += " - " + element.what;
+                    formatted += " - " + element.what + ":";
                 }
-                formatted += ": " + element.howmany + "@" + element.howmuch + "kg\n";
+                formatted += " " + element.howmany + "@" + element.howmuch + "kg\n";
                 reply += formatted;
             }, this);
 

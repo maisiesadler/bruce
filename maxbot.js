@@ -1,14 +1,13 @@
 var predicates = require('./predicates');
+var getRecognisedExercise = require('./recognisedexercises').getRecognisedExercise;
 
 var woBot = function (bot, setMax, getMax) {
-    //bot.say ('#general', 'hi');
     var getExerciseForAction = function (action) {
         var hearWith = bot
-            .hear(action + " {exercise} max")
-        // .do(m => m.exercise = m.params[0]);
+            .hear(action + " {exercise} max");
         var hearWithout = bot
             .hear(action + " max")
-            .ask("what's the exercise?", { predicate: resp => resp != null, then: (msg, resp) => (msg.exercise = resp) })
+            .ask("what's the exercise?", { predicate: resp => getRecognisedExercise(resp) !== "", then: (msg, resp) => (msg.exercise = getRecognisedExercise(resp)) })
         return hearWith
             .merge(hearWithout)
     };

@@ -14,18 +14,28 @@ var getDateToString = function (objectWithDate) {
     return objectWithDate;
 };
 
+var toTwoDig = function(s, extraChar){
+    if (extraChar == null)
+        extraChar = "0";
+    s = s.toString();
+    if (s.length === 1)
+        return extraChar + s;
+
+    return s;
+};
+
 var prettyPrintTimeSpan = function(timespan){
     if(typeof timespan === "string")
         timespan = parseInt(timespan);
     var date = new Date(timespan);
-    var dd = date.getDate();
-    var mm = date.getMonth() + 1;
+    var dd = toTwoDig(date.getDate());
+    var mm = toTwoDig(date.getMonth() + 1);
     var hr = date.getHours();
 
     if (hr < 12)
-        hr = hr + "AM";
+        hr = toTwoDig(hr, " ") + "AM";
     else 
-        hr = (hr - 12) + "PM";
+        hr = toTwoDig((hr - 12), " ") + "PM";
 
     return dd + "/" + mm + " " + hr;
 };
