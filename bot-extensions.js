@@ -1,5 +1,5 @@
 var Bot = require('rxbot').Bot;
-var bot = new Bot('xoxb-242490537844-Y4UztNiC05iKQEGTwgmtlWvS');
+var bot = new Bot('xoxb-242490537844-SSdkyyG2VDlSWER9FqCfDvin');
 var dym = require("rxbot/ts/dym/dym.plugin").dym;
 
 var predicates = require('./predicates');

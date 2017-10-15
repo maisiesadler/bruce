@@ -2,6 +2,7 @@ var workouts = {
     fto1: ['oneweek', '1w', '531-1'],
     fto3: ['threeweek', '3w', '531-3'],
     fto5: ['fiveweek', '5w', '531-5'],
+    ftoR: ['restweek', 'Rw', '531-R'],
 };
 
 var plan = {
@@ -19,6 +20,11 @@ var plan = {
         { reps: 5, weightPct: 65 },
         { reps: 5, weightPct: 75 },
         { reps: 5, weightPct: 85 },
+    ],
+    ftoR: [
+        { reps: 5, weightPct: 40 },
+        { reps: 5, weightPct: 50 },
+        { reps: 5, weightPct: 60 },
     ]
 };
 
@@ -26,6 +32,7 @@ var name = {
     fto1: 'fivethreeone-1',
     fto3: 'fivethreeone-3',
     fto5: 'fivethreeone-5',
+    ftoR: 'fivethreeone-rest',
 };
 
 var gkef = require('./recognisedentity').getKnownEntityFunction;
@@ -33,6 +40,9 @@ var getRecognisedWorkout = gkef(workouts);
 
 var getWeightsForWorkout = function (recognisedWo, exerciseMax) {
     var p = plan[recognisedWo];
+
+    if (p == null)
+        return [];
 
     var workoutPlan = {
         name: name[recognisedWo]

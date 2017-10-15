@@ -3,6 +3,7 @@ var getRecognisedExercise = require('./recognisedexercises').getRecognisedExerci
 var getRecognisedWorkout = require('./recognisedworkout').getRecognisedWorkout;
 var getWeightsForWorkout = require('./recognisedworkout').getWeightsForWorkout;
 var predicates = require('./predicates').predicates;
+var prettyPrintSets = require('./prettyprint/pp_sets').prettyPrint;
 
 var b = function (bot, getMax) {
     var getMsgWithInfo = () => {
@@ -38,20 +39,7 @@ var b = function (bot, getMax) {
             msg.workoutPlan = getWeightsForWorkout(msg.workoutType, msg.max);
         })
         .reply(msg => {
-            var r = "";
-            if (msg.workoutPlan.planType === "pct")
-                r = "*I couldn't find a max " + msg.exercise + " for " + msg.who + ", but here are the percentages*\n";
-            else{
-                r = "*Here are the weights for " + msg.who + "*\n";
-                r += "`Current max " + msg.exercise + " is " + msg.max + "`\n";
-            }
-
-            msg.workoutPlan.sets.forEach(set => {
-                if (set.weight != null)
-                    r += set.reps + " x " + set.weight + "kg\n";
-                else if (set.weightPct != null)
-                    r += set.reps + " x " + set.weightPct + "%\n";
-            });
+            var r = prettyPrintSets(msg.workoutPlan.planType, msg.exercise, msg.who, msg.workoutPlan.sets, msg.max);
 
             return r;
         })
