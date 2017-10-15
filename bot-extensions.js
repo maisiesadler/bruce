@@ -1,12 +1,17 @@
 var Bot = require('rxbot').Bot;
 var bot = new Bot('xoxb-242490537844-Y4UztNiC05iKQEGTwgmtlWvS');
+var dym = require("rxbot/ts/dym/dym.plugin").dym;
+
 var predicates = require('./predicates');
 var backup = require('./workouthelpers/backup').backup;
+
+
+bot.register(dym);
 
 var woBot = function () {
     bot.connect()
         .then(() => {
-            bot.say ('#general', 'hi');
+            bot.say('#general', 'hi');
         });
 
     bot.hear("backup data")
@@ -15,7 +20,7 @@ var woBot = function () {
         })
         .reply('done')
         .start();
-8
+
     return bot;
 };
 

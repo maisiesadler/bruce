@@ -1,6 +1,6 @@
 var users = {
-    maisie: ['@maisie','sadler'],
-    marc: ['@stinky', 'jones']
+    maisie: ['@maisie','sadler', 's'],
+    marc: ['@stinky', 'jones', 'j']
 };
 var gkef = require('./recognisedentity').getKnownEntityFunction;
 var getRecognisedUserInner = gkef(users);

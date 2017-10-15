@@ -48,6 +48,8 @@ var indexedDs = function (file, keys) {
     this.get = function (keyObj, level) {
         var clone = JSON.parse(JSON.stringify(idx));
         structure.keys.forEach(function (key) {
+            if (clone == null)
+                return;
             if (keyObj.hasOwnProperty(key)) {
                 var k = keyObj[key];
                 clone = clone[k];

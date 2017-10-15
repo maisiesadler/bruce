@@ -23,7 +23,7 @@ var addWorkout = function (when, who, what, howmuch, howmany) {
     workoutDataStore.add(wo);
 };
 
-var getWorkoutsSince = function (who, what, when) {
+var getWorkouts = function (who, what) {
     var search = {
         who: who,
         what: what
@@ -34,18 +34,30 @@ var getWorkoutsSince = function (who, what, when) {
 
     if (matches == null)
         return [];
-    var inRange = [];
-    Object.getOwnPropertyNames(matches).forEach(date => {
-        if (date > when) {
-            var location = matches[date].location;
-            var o = workoutDataStore.getAt(location);
-            inRange.push(o);
-        }
-    });
-    inRange = inRange.sort(function(a, b){return a.when-b.when});
 
-    return inRange;
+    var all = [];
+    Object.getOwnPropertyNames(matches).forEach(date => {
+        if (date === '__level')
+            return;
+        var location = matches[date].location;
+        var o = workoutDataStore.getAt(location);
+        all.push(o);
+    });
+    all = all.sort(function (a, b) { return a.when - b.when });
+
+    return all;
+}
+
+var getWorkoutsSince = function (who, what, when) {
+    return getWorkouts(who, what).filter(wo => wo.when > when);
+};
+
+var getLastWorkout = function (who, what) {
+    var all = getWorkouts(who, what);
+
+    return all[all.length - 1];
 };
 
 exports.add = addWorkout;
 exports.get = getWorkoutsSince;
+exports.last = getLastWorkout;

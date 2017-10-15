@@ -12,12 +12,11 @@ var logworkout = require('./workouthelpers/logworkout');
 
 
 var connectbot = require('./bot-extensions').WoBot;
-var includemaxes = require('./maxbot').add;
-var includelog = require('./logbot').add;
+var includemaxes = require('./ts/max/maxbot').add;
+var includelog = require('./ts/log/logbot').add;
+var getweights = require('./getweightsbot').add;
 
 var bot = connectbot();
 includemaxes(bot, maxhistory.addMax, maxhistory.getMax);
-includelog(bot, logworkout.add, logworkout.get);
-
-
-
+includelog(bot, logworkout.add, logworkout.get, logworkout.last);
+getweights(bot, maxhistory.getMax);
