@@ -2,6 +2,7 @@
 var maxhistory = require('./dataaccess/maxhistory');
 var logworkout = require('./dataaccess/logworkout');
 var schedule = require('./dataaccess/schedule');
+var dataaccess = require('./dataaccess/get');
 
 // loadTestData(data => {
 //     data.forEach(function(element) {
@@ -10,15 +11,20 @@ var schedule = require('./dataaccess/schedule');
 //     }, this);
 // });
 
-
 var connectbot = require('./bot-extensions').WoBot;
 var includemaxes = require('./bot/maxbot').add;
 var includelog = require('./bot/logbot').add;
 var getweights = require('./bot/getweightsbot').add;
 var scheduler = require('./bot/schedulebot').init;
 
-var bot = connectbot();
-includemaxes(bot, maxhistory.addMax, maxhistory.getMax);
-includelog(bot, logworkout.add, logworkout.get, logworkout.last);
-getweights(bot, maxhistory.getMax);
-scheduler(bot, schedule.whatistoday, maxhistory.getMax);
+
+
+var bt = dataaccess.getbottoken(bottoken => {
+    var bot = connectbot(bottoken);
+});
+
+
+// includemaxes(bot, maxhistory.addMax, maxhistory.getMax);
+// includelog(bot, logworkout.add, logworkout.get, logworkout.last);
+// getweights(bot, maxhistory.getMax);
+// scheduler(bot, schedule.whatistoday, maxhistory.getMax);

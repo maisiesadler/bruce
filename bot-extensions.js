@@ -1,14 +1,12 @@
 var Bot = require('rxbot').Bot;
-var bot = new Bot('xoxb-242490537844-SSdkyyG2VDlSWER9FqCfDvin');
 var dym = require("rxbot/ts/dym/dym.plugin").dym;
 
 var predicates = require('./helpers/predicates');
 var backup = require('./dataaccess/backup').backup;
 
-
-bot.register(dym);
-
-var woBot = function () {
+var woBot = function (bottoken) {
+    var bot = new Bot(bottoken);
+    bot.register(dym);
     bot.connect()
         .then(() => {
             bot.say('#general', 'hi');
