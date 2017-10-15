@@ -4,7 +4,7 @@ var exercises = {
     deadlift: ['dl'],
     overheadpress: ['ohp']
 };
-var gkef = require('./recognisedentity').getKnownEntityFunction;
+var gkef = require('./entity').getKnownEntityFunction;
 var getRecognisedExercise = gkef(exercises);
 
 exports.getRecognisedExercise = getRecognisedExercise;

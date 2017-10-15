@@ -1,6 +1,7 @@
-var predicates = require('./../../predicates').predicates;
-var getRecognisedExercise = require('./../../recognisedexercises').getRecognisedExercise;
-var getRecognisedUser = require('./../../recogniseduser').getRecognisedUser;
+var predicates = require('./../helpers/predicates').predicates;
+var getRecognised = require('./../recognised/get');
+var getRecognisedUser = getRecognised.user;
+var getRecognisedExercise = getRecognised.exercise;
 
 var woBot = function (bot, setMax, getMax) {
     var getExerciseForAction = function (action) {

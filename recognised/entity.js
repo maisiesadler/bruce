@@ -1,4 +1,6 @@
 var getKnownEntityFunction = function (knownEntities) {
+    if (knownEntities == null || typeof knownEntities !== 'object' || typeof knownEntities.forEach === 'function')
+        return undefined;
     var knownEntityMap = {};
     (function () {
         Object.getOwnPropertyNames(knownEntities).forEach(ety => {

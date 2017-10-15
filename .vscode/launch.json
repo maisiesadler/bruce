@@ -9,6 +9,12 @@
             "request": "launch",
             "name": "Launch Program",
             "program": "${workspaceRoot}/app.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Run Tests",
+            "program": "${workspaceRoot}/tests.js"
         }
     ]
 }

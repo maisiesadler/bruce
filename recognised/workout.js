@@ -35,7 +35,7 @@ var name = {
     ftoR: 'fivethreeone-rest',
 };
 
-var gkef = require('./recognisedentity').getKnownEntityFunction;
+var gkef = require('./entity').getKnownEntityFunction;
 var getRecognisedWorkout = gkef(workouts);
 
 var getWeightsForWorkout = function (recognisedWo, exerciseMax) {
@@ -64,8 +64,6 @@ var getWeightsForWorkout = function (recognisedWo, exerciseMax) {
 
     return workoutPlan;
 };
-
-
 
 exports.getRecognisedWorkout = getRecognisedWorkout;
 exports.getWeightsForWorkout = getWeightsForWorkout;

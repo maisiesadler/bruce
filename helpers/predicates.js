@@ -1,5 +1,6 @@
-var getRecognisedExercise = require('./recognisedexercises').getRecognisedExercise;
-var getRecognisedUser = require('./recogniseduser').getRecognisedUser;
+var getRecognised = require('./../recognised/get');
+var getRecognisedUser = getRecognised.user;
+var getRecognisedExercise = getRecognised.exercise;
 
 var predicates = {};
 predicates.integer = val => {

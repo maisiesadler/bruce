@@ -1,0 +1,1 @@
+require('./recognised/entity.tests');

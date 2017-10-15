@@ -1,7 +1,8 @@
-var predicates = require('./../../predicates').predicates;
-var dateformat = require('./../../dateformat');
-var getRecognisedExercise = require('./../../recognisedexercises').getRecognisedExercise;
-var getRecognisedUser = require('./../../recogniseduser').getRecognisedUser;
+var predicates = require('./../helpers/predicates').predicates;
+var dateformat = require('./../prettyprint/pp_date');
+var getRecognised = require('./../recognised/get');
+var getRecognisedUser = getRecognised.user;
+var getRecognisedExercise = getRecognised.exercise;
 
 var hr = 3600000;
 var day = hr * 24;

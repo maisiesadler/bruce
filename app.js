@@ -1,8 +1,7 @@
-var loadTestData = require('./readtestdata.js').loadTestData;
-var maxhistory = require('./workouthelpers/maxhistory');
-var logworkout = require('./workouthelpers/logworkout');
-var schedule = require('./workouthelpers/schedule');
-
+//var loadTestData = require('./readtestdata.js').loadTestData;
+var maxhistory = require('./dataaccess/maxhistory');
+var logworkout = require('./dataaccess/logworkout');
+var schedule = require('./dataaccess/schedule');
 
 // loadTestData(data => {
 //     data.forEach(function(element) {
@@ -13,10 +12,10 @@ var schedule = require('./workouthelpers/schedule');
 
 
 var connectbot = require('./bot-extensions').WoBot;
-var includemaxes = require('./ts/max/maxbot').add;
-var includelog = require('./ts/log/logbot').add;
-var getweights = require('./getweightsbot').add;
-var scheduler = require('./schedulebot').init;
+var includemaxes = require('./bot/maxbot').add;
+var includelog = require('./bot/logbot').add;
+var getweights = require('./bot/getweightsbot').add;
+var scheduler = require('./bot/schedulebot').init;
 
 var bot = connectbot();
 includemaxes(bot, maxhistory.addMax, maxhistory.getMax);

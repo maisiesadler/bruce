@@ -1,9 +1,11 @@
-var getRecognisedUser = require('./recogniseduser').getRecognisedUser;
-var getRecognisedExercise = require('./recognisedexercises').getRecognisedExercise;
-var getRecognisedWorkout = require('./recognisedworkout').getRecognisedWorkout;
-var getWeightsForWorkout = require('./recognisedworkout').getWeightsForWorkout;
-var predicates = require('./predicates').predicates;
-var prettyPrintSets = require('./prettyprint/pp_sets').prettyPrint;
+var getRecognised = require('./../recognised/get');
+var getRecognisedUser = getRecognised.user;
+var getRecognisedExercise = getRecognised.exercise;
+var getRecognisedWorkout = getRecognised.workout;
+var getWeightsForWorkout = getRecognised.getWeightsForWorkout;
+
+var predicates = require('./../helpers/predicates').predicates;
+var prettyPrintSets = require('./../prettyprint/pp_sets').prettyPrint;
 
 var b = function (bot, getMax) {
     var getMsgWithInfo = () => {

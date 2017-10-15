@@ -1,8 +1,3 @@
-var datastore = require('./datastore').ds;
-// var scheduleFile = "/Users/maisiesadler/nodeapps/workouts/data/schedule.json";
-
-// var ds = new datastore(scheduleFile);
-
 var exercises = [
     "upper", "squats", "", "deadlift", "bench", "lower", ""
 ];
