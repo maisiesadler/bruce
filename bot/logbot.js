@@ -7,8 +7,12 @@ var getRecognisedExercise = getRecognised.exercise;
 var hr = 3600000;
 var day = hr * 24;
 
+var dataaccess = require('./../dataaccess/get');
+var addWorkout = dataaccess.record;
+var getWorkout = dataaccess.getRecorded;
+var getLast = dataaccess.getLastRecorded;
 
-var woBot = function (bot, addWorkout, getWorkout, getLast) {
+var woBot = function (bot) {
 
     bot
         .hear("log {exercise}")

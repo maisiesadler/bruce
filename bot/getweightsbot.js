@@ -4,10 +4,13 @@ var getRecognisedExercise = getRecognised.exercise;
 var getRecognisedWorkout = getRecognised.workout;
 var getWeightsForWorkout = getRecognised.getWeightsForWorkout;
 
+var dataaccess = require('./../dataaccess/get');
+var getMax = dataaccess.getMax;
+
 var predicates = require('./../helpers/predicates').predicates;
 var prettyPrintSets = require('./../prettyprint/pp_sets').prettyPrint;
 
-var b = function (bot, getMax) {
+var b = function (bot) {
     var getMsgWithInfo = () => {
         var getweightandperson = bot
             .hear('get my weights for {workoutType}')

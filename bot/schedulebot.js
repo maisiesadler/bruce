@@ -5,8 +5,11 @@ var getRecognisedWorkout = getRecognised.workout;
 var getWeightsForWorkout = getRecognised.getWeightsForWorkout;
 var prettyPrintSets = require('./../prettyprint/pp_sets').prettyPrint;
 
+var dataaccess = require('./../dataaccess/get');
+var getMax = dataaccess.getMax;
+var getTodaysWorkout = dataaccess.getTodaysWorkout;
 
-var initScheduleBot = function (bot, getTodaysWorkout, getMax) {
+var initScheduleBot = function (bot) {
     bot
         .hear("whats my workout today")
         .merge(bot.hear("get todays workout"))

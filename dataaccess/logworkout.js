@@ -58,6 +58,8 @@ var getLastWorkout = function (who, what) {
     return all[all.length - 1];
 };
 
+
+
 exports.add = addWorkout;
 exports.get = getWorkoutsSince;
 exports.last = getLastWorkout;

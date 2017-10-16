@@ -10,7 +10,7 @@ var hr = 3600000;
 var day = hr * 24;
 
 var recordedCheckpoint = {
-    date: Date.now(),
+    date: new Date(2017, 9, 15),
     day: 16
 };
 var createSchedule = function () {

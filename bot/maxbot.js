@@ -3,7 +3,11 @@ var getRecognised = require('./../recognised/get');
 var getRecognisedUser = getRecognised.user;
 var getRecognisedExercise = getRecognised.exercise;
 
-var woBot = function (bot, setMax, getMax) {
+var dataaccess = require('./../dataaccess/get');
+var getMax = dataaccess.getMax;
+var setMax = dataaccess.setMax;
+
+var woBot = function (bot) {
     var getExerciseForAction = function (action) {
         var hearWith = bot
             .hear(action + " {exercise} max")
@@ -43,6 +47,32 @@ var woBot = function (bot, setMax, getMax) {
             return "max for " + m.who + " - " + m.exercise + " " + m.max + "kg";
         })
         .start();
+
+    bot
+        .hear("whats {percentage} percent of my {exercise} max")
+        .filter(msg => {
+            msg.exercise = getRecognisedExercise(msg.exercise);
+            return msg.exercise !== "";
+        })
+        .filter(msg => {
+            return predicates.positiveNumber(msg.percentage);
+        })
+        .do(m => {
+            m.who = getRecognisedUser("me", m.user.name);
+            m.max = getMax(m.who, m.exercise);
+            m.answer = (m.percentage * m.max / 100).toFixed(1);
+        })
+        .reply(m => {
+            if (m.max == null)
+                return "no max recorded!";
+
+            var reply = "max for " + m.who + " - " + m.exercise + " " + m.max + "kg\n";
+            reply += "so " + m.percentage + "% of that is " + m.answer + "kg";
+
+            return reply;
+        })
+        .start();
+
 };
 
 exports.add = woBot;
