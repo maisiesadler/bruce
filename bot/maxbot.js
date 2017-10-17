@@ -49,7 +49,7 @@ var woBot = function (bot) {
         .start();
 
     bot
-        .hear("whats {percentage} percent of my {exercise} max")
+        .hear("what('|)s {percentage}(%| percent) of my {exercise} max")
         .filter(msg => {
             msg.exercise = getRecognisedExercise(msg.exercise);
             return msg.exercise !== "";
@@ -75,4 +75,6 @@ var woBot = function (bot) {
 
 };
 
-exports.add = woBot;
+exports.init = woBot;
+exports.name = 'max';
+exports.description = 'find and update max weight for an exercise';

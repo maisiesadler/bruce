@@ -9,18 +9,24 @@
 // });
 
 var connectbot = require('./bot-extensions').WoBot;
-var includemaxes = require('./bot/maxbot').add;
-var includelog = require('./bot/logbot').add;
-var getweights = require('./bot/getweightsbot').add;
-var scheduler = require('./bot/schedulebot').init;
+// var includemaxes = require('./bot/maxbot').add;
+// var includelog = require('./bot/logbot').add;
+// var getweights = require('./bot/getweightsbot').add;
+// var scheduler = require('./bot/schedulebot').init;
+
 
 var dataaccess = require('./dataaccess/get');
 
 var bt = dataaccess.getbottoken(bottoken => {
     var bot = connectbot(bottoken);
 
-    getweights(bot);
-    includelog(bot);
-    includemaxes(bot);
-    scheduler(bot);
+    bot.register('./bot/logbot');
+    bot.register('./bot/getweightsbot');
+    bot.register('./bot/schedulebot');
+    bot.register('./bot/maxbot');
+
+   // getweights(bot);
+   // includelog(bot);
+    // includemaxes(bot);
+    // scheduler(bot);
 });

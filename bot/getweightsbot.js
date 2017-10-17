@@ -52,4 +52,6 @@ var b = function (bot) {
 };
 
 
-exports.add = b;
+exports.init = b;
+exports.name = 'weights';
+exports.description = 'get weights for known workouts';

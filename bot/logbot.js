@@ -82,4 +82,6 @@ var woBot = function (bot) {
         .start();
 };
 
-exports.add = woBot;
+exports.init = woBot;
+exports.name = 'log';
+exports.description = 'record and view workouts';

@@ -12,6 +12,7 @@ var getTodaysWorkout = dataaccess.getTodaysWorkout;
 var initScheduleBot = function (bot) {
     bot
         .hear("whats my workout today")
+        .merge(bot.hear("what is my workout today"))
         .merge(bot.hear("get todays workout"))
         .reply(msg => {
             var today = getTodaysWorkout();
@@ -36,3 +37,5 @@ var initScheduleBot = function (bot) {
 };
 
 exports.init = initScheduleBot;
+exports.name = 'schedule';
+exports.description = 'find todays workout';
